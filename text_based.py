@@ -46,12 +46,16 @@ if __name__ == "__main__":
     #img_class = recognizer.recognzie(image)
     #print(img_class)
     
-    PATH = "../Dataset/train/Oplata"
+    #PATH = "../"
     #files = os.listdir(PATH)
     #print(files)
-    files = ['inv-0200.jpg']
+    #files = ['scan_18.jpg']
     #files = ["scan_36.jpg"]
-    tests_success = 0
+    img = Image.open(f"scan_18.jpg")
+    img = image_preprocessor.process(img)
+    img_class = recognizer.recognzie(img)
+    print(img_class)
+    '''tests_success = 0
     expected_class = 1
     test_failed = []
     for img_path in files:
@@ -67,6 +71,5 @@ if __name__ == "__main__":
             print("Success", tests_success)
     
     print("Failed:", test_failed)
-    print("Success cnt:", tests_success)
+    print("Success cnt:", tests_success)'''
     
-
