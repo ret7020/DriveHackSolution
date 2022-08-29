@@ -1,0 +1,122 @@
+﻿<Window x:Class="Main_App_For_4_case.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main_App_For_4_case"
+        mc:Ignorable="d"
+        Title="Obrabotka failov" Height="546" Width="700">
+
+    <Grid x:Name="Mainwin" Background="White" Width="800">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="397*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Rectangle HorizontalAlignment="Left"
+                   Height="44"
+                   Fill="#3399db"
+                   VerticalAlignment="Top" 
+                   Width="800" Margin="0,-2,0,0" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="19"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top"
+                   Text="Распознавание сканированных документов" Margin="157,8,0,0" Width="587"/>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Left" Width="698">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="349*"/>
+                <ColumnDefinition Width="266*"/>
+                <ColumnDefinition Width="83*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Rectangle x:Name="mainpanel"
+                    AllowDrop="True"
+                    Fill="WhiteSmoke"
+                    RadiusX="10"
+                    RadiusY="10"
+                    StrokeDashArray="10"
+                    StrokeThickness="2"
+                    StrokeDashCap="Round"
+                    Stroke="Silver"
+                    Height="300"
+                    Width="300" Margin="28,36,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Drop="mainpanel_Drop" DragEnter="mainpanel_DragEnter" DragLeave="mainpanel_DragLeave"
+                    
+                    />
+            <Button
+                    BorderThickness="0"
+                    Background="#3399db"
+                    Content="Выбрать файл"
+                    Foreground="White"
+                    FontSize="18"
+                    Height="50"
+                    Width="170"
+                    Margin="0,371,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"
+                    >
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Label x:Name="Fer" Content="Перекиньте файлы сюда"
+                   HorizontalAlignment="Left" 
+                   HorizontalContentAlignment="Center" 
+                   Margin="52,125,0,0"
+                   VerticalAlignment="Top"
+                   Width="253" Height="50" 
+                   FontSize="20" 
+                   FontWeight="SemiBold"/>
+            <Image Source="/Upload-PNG-Image-File.png" Margin="136,182,0,0" Height="72" VerticalAlignment="Top" HorizontalAlignment="Left" Width="82"/>
+            <Rectangle HorizontalAlignment="Left" Height="511" VerticalAlignment="Top" Width="3" Fill="#FF4E9BD4" Grid.Column="1" Margin="1,-10,0,0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="Output" Grid.Column="1" 
+                    Content="Очистка"
+                    HorizontalAlignment="Left" 
+                    Margin="38,34,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="44" Width="277"
+                    BorderThickness="0"
+                    Background="#ff6347 "
+                    Foreground="White"
+                    FontWeight="SemiBold"
+                    FontSize="20" Click="Output_Click" Grid.ColumnSpan="2"
+                    >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="6"/>
+
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+
+            <TextBox x:Name="gek" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="38,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" Height="322" BorderBrush="#FF6D7693" Background="WhiteSmoke" SelectionBrush="#FF7EABD8"/>
+
+
+
+
+
+
+
+        </Grid>
+    </Grid>
+</Window>
